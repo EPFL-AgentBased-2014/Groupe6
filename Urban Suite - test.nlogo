@@ -147,7 +147,7 @@ to move
   ask jobs [
     let other-jobs-dispo count jobs in-radius other-jobs-wanted-in-radius
     if other-jobs-dispo < m [ demenage ]
-    let city-center count builders in-radius 10
+    let city-center count builders in-radius 30
     if city-center < 1 [demenage]
     ]
    
@@ -270,7 +270,7 @@ job-wanted-in-radius
 job-wanted-in-radius
 0
 20
-20
+18
 1
 1
 NIL
@@ -282,7 +282,7 @@ INPUTBOX
 230
 219
 n
-2
+1
 1
 0
 Number
@@ -296,7 +296,7 @@ other-jobs-wanted-in-radius
 other-jobs-wanted-in-radius
 0
 20
-18
+12
 1
 1
 NIL
@@ -308,7 +308,7 @@ INPUTBOX
 232
 295
 m
-3
+1
 1
 0
 Number
