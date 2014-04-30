@@ -11,10 +11,15 @@ to setup
   clear-all
   reset-ticks
   setup-turtles
-  ask patches [ 
+  setup-patches
+end
+
+
+to setup-patches
+ask patches [ 
     if pxcor > 0 [         ;; colorer les patches de la moitié
     set pcolor green ]     ;; droite de la Vue en vert
-    if pxcor < 0 [
+    if pxcor <= 0 [
     set pcolor brown ] 
     if pycor = 2 [
       set pcolor blue ]
@@ -22,18 +27,14 @@ to setup
       set pcolor blue
       ]
     ]
-  ask patch 0 0 [
-    set pcolor black]
-  
-    
-    
-    
+  ;ask patch 0 0 [
+  ;  set pcolor black]
 end
-
 
 
 to go
   move
+  ;verify-policy
   tick
 end
 
@@ -67,6 +68,7 @@ to move
     if pcolor = blue [demenage]
     if pcolor = black [demenage]
     ]
+   
 end
 
 
@@ -77,13 +79,24 @@ end
 
 
 
-
+to verify-policy
+   
+  if pxcor > 0 [
+    let maxjob count jobs
+    if maxjob > (njob / 2) []
+    ]
+  
+  
+  ;if pcolor = green [
+   ;let nombre count jobs
+   ; if nombre > (njob / 2) [move]
+   ; ]
+end
 
 
 
 
  ;; ask (patch -2 1) with [pcolor = green] [code] ;; demande au patch -2 1 d'executer un code si sa couleur est verte
-
 
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -136,7 +149,7 @@ INPUTBOX
 67
 118
 nhouse
-200
+400
 1
 0
 Number
@@ -147,16 +160,16 @@ INPUTBOX
 122
 118
 njob
-100
+30
 1
 0
 Number
 
 BUTTON
-675
-424
-738
-457
+240
+10
+303
+43
 NIL
 go
 NIL
@@ -170,10 +183,10 @@ NIL
 1
 
 BUTTON
-744
-424
-807
-457
+240
+43
+303
+76
 NIL
 go
 T
@@ -195,7 +208,7 @@ job-wanted-in-radius
 job-wanted-in-radius
 0
 7
-1.8
+6.4
 0.2
 1
 NIL
@@ -210,7 +223,7 @@ other-jobs-wanted-in-radius
 other-jobs-wanted-in-radius
 0
 7
-5.2
+3
 0.2
 1
 NIL
@@ -242,7 +255,7 @@ INPUTBOX
 251
 211
 n
-2
+1
 1
 0
 Number
@@ -253,10 +266,46 @@ INPUTBOX
 251
 300
 m
-2
+6
 1
 0
 Number
+
+PLOT
+776
+15
+960
+135
+Mixité fonctionelle
+NIL
+NIL
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -16777216 true "" "plot count turtles"
+
+PLOT
+777
+142
+961
+272
+Mixité sociale
+NIL
+NIL
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -16777216 true "" "plot count turtles"
 
 @#$#@#$#@
 ## WHAT IS IT?
