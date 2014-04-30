@@ -97,7 +97,6 @@ end
 
 
  ;; ask (patch -2 1) with [pcolor = green] [code] ;; demande au patch -2 1 d'executer un code si sa couleur est verte
-
 @#$#@#$#@
 GRAPHICS-WINDOW
 312
@@ -208,7 +207,7 @@ job-wanted-in-radius
 job-wanted-in-radius
 0
 7
-6.4
+2.8
 0.2
 1
 NIL
@@ -223,7 +222,7 @@ other-jobs-wanted-in-radius
 other-jobs-wanted-in-radius
 0
 7
-3
+5.4
 0.2
 1
 NIL

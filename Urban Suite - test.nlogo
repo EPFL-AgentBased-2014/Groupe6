@@ -38,6 +38,7 @@ to generate-cityscape
        fd 1
        set color 6
        set transport .75
+       ask patch-here [set pcolor 6]
       ]
 
 ;; bloc qui limite le nombre de route
@@ -136,19 +137,37 @@ to setup-turtles
 end
 
 
+to create-center
+   
+end
+
 
 to move
   ask houses [
     let emplois-dispo count jobs in-radius job-wanted-in-radius
     if emplois-dispo < n [ demenage ]
-    let city-center count service-centers in-radius 10
+    let city-center count service-centers in-radius 20
     if city-center < 1 [demenage]
     ]
   ask jobs [
     let other-jobs-dispo count jobs in-radius other-jobs-wanted-in-radius
     if other-jobs-dispo < m [ demenage ]
-    let city-center count builders in-radius 30
-    if city-center < 1 [demenage]
+    
+    
+    let destpatch patches in-radius 1000 with [ pcolor = 6 ]
+  ;;  print "jj"
+   ;; print destpatch
+    ifelse any? destpatch [
+     ;; print "hello"
+      let ndestpatch [neighbors] of one-of destpatch
+      if any? ndestpatch with [pcolor != 6] [
+        move-to one-of ndestpatch with [pcolor != 6]
+        ]
+      ]
+    [ ;demenage
+      ]
+    ;let city-center count builders in-radius 30
+    ;if city-center < 1 [demenage]
     ]
    
 end
@@ -296,7 +315,7 @@ other-jobs-wanted-in-radius
 other-jobs-wanted-in-radius
 0
 20
-12
+11
 1
 1
 NIL
