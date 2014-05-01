@@ -5,7 +5,7 @@ breed [shops shop]
 breed [centres centre]
 breed [centres2 centre2]
 breed [centres3 centre3]
-
+breed [riches rich]
 
 
 
@@ -59,6 +59,10 @@ to setup-zones
     set color violet
     set shape "square"
     ]
+  create-riches nrich [
+    set color orange
+    set shape "house"
+    ]
   ask turtles [demenage-init]
 end
 
@@ -96,8 +100,8 @@ end
 
 to move
   ask jobs [
-    let autre-job count jobs in-radius 2
-    let routesnbr count centres2 in-radius 2
+    let autre-job count jobs in-radius job-job-radius
+    let routesnbr count centres2 in-radius job-route-radius
     ;let maisons-dispo count houses in-radius 7
     ;let centre-dispo count centres in-radius 9 
     if autre-job < 3 [demenage-job]
@@ -106,16 +110,24 @@ to move
     if routesnbr < 1[demenage-job]
     ]
   ask shops [
-    let routes-dispo count centres2 in-radius 1
-    ;let flux-job count jobs in-radius 2
+    ;let routes-dispo count centres2 in-radius 1
+    let flux-job count jobs in-radius 2
     ;let centre-comm count centres in-radius 6
-    if routes-dispo < 5 [demenage-job]
-    ;if flux-job < 3 [demenage-job]
+    ;if routes-dispo < 5 [demenage-job]
+    if flux-job < 3 [demenage-job]
     ;if centre-comm < 1 [demenage-job]
     ]
   ask houses [
-    let emplois-dispo count jobs in-radius 7
+    let emplois-dispo count jobs in-radius house-job-radius
     if emplois-dispo < 5 [demenage-house]
+    if count jobs-here >= 1 [demenage-house]
+    if count shops-here >= 1 [demenage-house]
+    ]
+  ask riches [
+    let pauvres count houses in-radius rich-poor-radius
+    let emplois-riche count jobs in-radius 15
+    if pauvres > 2 [demenage-house]
+    if emplois-riche < 3 [demenage-house]
     if count jobs-here >= 1 [demenage-house]
     if count shops-here >= 1 [demenage-house]
     ]
@@ -175,12 +187,11 @@ end
 
 
 
-
 @#$#@#$#@
 GRAPHICS-WINDOW
-210
+507
 10
-868
+1165
 529
 40
 30
@@ -261,7 +272,7 @@ INPUTBOX
 180
 204
 nhouse
-1200
+900
 1
 0
 Number
@@ -272,21 +283,92 @@ INPUTBOX
 180
 272
 njob
-700
+500
 1
 0
 Number
 
 INPUTBOX
-25
-281
-180
-341
+24
+304
+179
+364
 nshop
 250
 1
 0
 Number
+
+INPUTBOX
+23
+374
+178
+434
+nrich
+300
+1
+0
+Number
+
+SLIDER
+189
+144
+361
+177
+house-job-radius
+house-job-radius
+1
+20
+5
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+187
+212
+359
+245
+job-job-radius
+job-job-radius
+1
+20
+5
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+188
+247
+360
+280
+job-route-radius
+job-route-radius
+1
+20
+2
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+185
+374
+357
+407
+rich-poor-radius
+rich-poor-radius
+1
+20
+4
+1
+1
+NIL
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?
