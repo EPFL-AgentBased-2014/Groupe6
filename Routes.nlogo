@@ -40,7 +40,7 @@ to setup-turtles
 end
 
 to setup-builders
-  create-builders 15 [
+  create-builders 7 [
     set pcolor gray
     set shape "triangle 2"
     ]
@@ -52,15 +52,15 @@ to setup-zones
     set shape "house"
     ]
   create-jobs njob [
-    set color yellow
+    set color green
     set shape "square"
     ]
   create-shops nshop [
-    set color violet
+    set color blue
     set shape "square"
     ]
   create-riches nrich [
-    set color orange
+    set color 17
     set shape "house"
     ]
   ask turtles [demenage-init]
@@ -135,7 +135,7 @@ to move
     let demande count jobs in-radius 3
     set color gray
     pd
-    if demande > 3 [fd 3]
+    if demande > 3 [fd routes-growth]
     hatch-centres2 1 [
       set shape "circle"
       ]
@@ -189,10 +189,10 @@ end
 
 @#$#@#$#@
 GRAPHICS-WINDOW
-507
-10
-1165
-529
+567
+17
+1225
+536
 40
 30
 8.0
@@ -283,7 +283,7 @@ INPUTBOX
 180
 272
 njob
-500
+400
 1
 0
 Number
@@ -366,6 +366,21 @@ rich-poor-radius
 20
 4
 1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+185
+478
+357
+511
+routes-growth
+routes-growth
+0
+5
+1.5
+0.5
 1
 NIL
 HORIZONTAL
