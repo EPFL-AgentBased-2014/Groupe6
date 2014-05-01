@@ -59,7 +59,7 @@ to setup-zones
     ]
   create-houses2 nhouse2 [
     set color violet
-    set shape "square"
+    set shape "house"
     ]
   ask houses1 [demenage-init]
   ask houses2 [demenage-init]
@@ -193,6 +193,22 @@ end
 
 
 
+to-report average-density
+  if not any? patches with [count turtles-here >= 1] [report 0]
+  report count turtles / count patches with [count turtles-here >= 1]
+  ;print nhabm
+end
+
+
+
+
+to city-shape
+  ask patches [
+    let built count turtles-here
+    if built >= 1 [set pcolor gray]
+    ]
+end
+
 
 to map-density
  
@@ -200,7 +216,7 @@ to map-density
    let nturtles count turtles-here ; with [color]
    
   ; let npop nturtles - count centre2-here
-   set pcolor (nturtles + 3) / 2
+   set pcolor 10 - (nturtles + 3) / 2 + 1.4
     ]
  
  ;set n (count-turtles-at 1 1)
@@ -219,13 +235,12 @@ end
 
 
 
-
 @#$#@#$#@
 GRAPHICS-WINDOW
-326
-4
-1071
-588
+298
+10
+1043
+594
 40
 30
 9.0741
@@ -249,10 +264,10 @@ ticks
 30.0
 
 BUTTON
-184
-11
-250
-44
+142
+12
+208
+45
 NIL
 setup
 NIL
@@ -266,10 +281,10 @@ NIL
 1
 
 BUTTON
-259
-11
-322
-44
+217
+12
+280
+45
 NIL
 go
 T
@@ -283,10 +298,10 @@ NIL
 1
 
 BUTTON
-260
-47
-323
-80
+218
+48
+281
+81
 NIL
 go
 NIL
@@ -305,7 +320,7 @@ INPUTBOX
 64
 131
 nhouse1
-1000
+2000
 1
 0
 Number
@@ -316,7 +331,7 @@ INPUTBOX
 175
 131
 nshop
-400
+700
 1
 0
 Number
@@ -327,7 +342,7 @@ INPUTBOX
 123
 131
 nhouse2
-200
+400
 1
 0
 Number
@@ -341,7 +356,7 @@ Similar-wanted1
 Similar-wanted1
 0
 8
-0
+5
 1
 1
 NIL
@@ -356,7 +371,7 @@ Similar-wanted2
 Similar-wanted2
 0
 8
-3
+6
 1
 1
 NIL
@@ -371,7 +386,7 @@ nb-of-jobs-wanted
 nb-of-jobs-wanted
 0
 10
-1
+2
 1
 1
 NIL
@@ -416,19 +431,19 @@ Radius-between-two-shops
 Radius-between-two-shops
 0
 20
-13
+5
 1
 1
 NIL
 HORIZONTAL
 
 INPUTBOX
-237
+235
 265
-287
+285
 325
 m
-4
+14
 1
 0
 Number
@@ -454,11 +469,11 @@ Number max. of level
 1
 
 PLOT
-9
-379
-313
-529
-Density
+-10
+384
+294
+534
+% vide
 tick
 density
 0.0
@@ -472,10 +487,10 @@ PENS
 "default" 1.0 0 -16777216 true "" "plot density"
 
 BUTTON
-1040
-55
-1180
-89
+1050
+56
+1190
+90
 NIL
 calculate-density
 NIL
@@ -489,10 +504,10 @@ NIL
 1
 
 BUTTON
-1057
-134
-1168
-168
+1052
+151
+1163
+185
 NIL
 map-density
 NIL
@@ -506,10 +521,10 @@ NIL
 1
 
 BUTTON
-1057
-98
-1167
-132
+1051
+97
+1161
+131
 NIL
 clear-agents
 NIL
@@ -529,9 +544,44 @@ SWITCH
 381
 level
 level
-1
+0
 1
 -1000
+
+BUTTON
+1053
+189
+1150
+222
+NIL
+city-shape
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
+
+PLOT
+1054
+233
+1254
+383
+nhabm2
+tick
+densité
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -16777216 true "" "plot average-density"
 
 @#$#@#$#@
 ## WHAT IS IT?
