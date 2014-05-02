@@ -184,8 +184,8 @@ to calculate-density
   
   ;let occupance count patches with [count turtles-here >= 1 ] ; et les patches avec un voision qui est un turtles
   ;let density (occupance / total) * 100
-  print "nombre de cases vides:" 
-  print density
+  ;print "nombre de cases vides:" 
+  ;print density
 end
 
 
@@ -229,8 +229,6 @@ end
 
 ; shops: radius 1 - m=4 => plusieurs micro-centres
 ; houses1:             houses2           shops
-
-
 
 
 
@@ -356,7 +354,7 @@ Similar-wanted1
 Similar-wanted1
 0
 8
-5
+3
 1
 1
 NIL
@@ -371,7 +369,7 @@ Similar-wanted2
 Similar-wanted2
 0
 8
-6
+8
 1
 1
 NIL
@@ -386,7 +384,7 @@ nb-of-jobs-wanted
 nb-of-jobs-wanted
 0
 10
-2
+6
 1
 1
 NIL
@@ -431,7 +429,7 @@ Radius-between-two-shops
 Radius-between-two-shops
 0
 20
-5
+13
 1
 1
 NIL
@@ -931,31 +929,15 @@ NetLogo 5.0.5
 @#$#@#$#@
 @#$#@#$#@
 <experiments>
-  <experiment name="experiment" repetitions="1" runMetricsEveryStep="true">
+  <experiment name="experiment" repetitions="1" runMetricsEveryStep="false">
     <setup>setup</setup>
     <go>go</go>
     <timeLimit steps="200"/>
     <metric>density</metric>
-    <enumeratedValueSet variable="Similar-wanted2">
-      <value value="0"/>
-      <value value="1"/>
-      <value value="3"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="Radius-between-two-shops">
-      <value value="1"/>
-      <value value="1"/>
-      <value value="13"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="nb-of-jobs-wanted">
-      <value value="0"/>
-      <value value="1"/>
-      <value value="7"/>
-    </enumeratedValueSet>
-    <enumeratedValueSet variable="Similar-wanted1">
-      <value value="0"/>
-      <value value="1"/>
-      <value value="3"/>
-    </enumeratedValueSet>
+    <steppedValueSet variable="Similar-wanted2" first="0" step="2" last="8"/>
+    <steppedValueSet variable="Radius-between-two-shops" first="1" step="6" last="13"/>
+    <steppedValueSet variable="nb-of-jobs-wanted" first="0" step="3" last="7"/>
+    <steppedValueSet variable="Similar-wanted1" first="0" step="1" last="3"/>
   </experiment>
 </experiments>
 @#$#@#$#@
