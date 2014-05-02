@@ -76,6 +76,8 @@ to go
   move
   calculate-density
   tick
+  
+  if ( ticks = 230) [stop]
 end
 
 
