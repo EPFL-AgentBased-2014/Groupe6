@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Groupe6 by EPFL-AgentBased-2014</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Groupe6</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/EPFL-AgentBased-2014/Groupe6">View the Project on GitHub <small>EPFL-AgentBased-2014/Groupe6</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/EPFL-AgentBased-2014/Groupe6/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/EPFL-AgentBased-2014/Groupe6/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/EPFL-AgentBased-2014/Groupe6">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><a href="http://epfl-agentbased-2014.github.io/">&lt;&lt;&lt; EPFL Semaine ENAC - Modèles Basés-Agents</a></p>
+
+<p><strong>Résumé</strong></p>
+
+<p>Le but de ce projet est de comprendre pourquoi une ville prend une certaine forme, et comment il est possible, via différent paramètre, de changer cette forme tout en densifiant la ville.</p>
+
+<h1>
+<a name="introduction--int%C3%A9r%C3%AAt-de-la-recherche" class="anchor" href="#introduction--int%C3%A9r%C3%AAt-de-la-recherche"><span class="octicon octicon-link"></span></a>Introduction / Intérêt de la recherche</h1>
+
+<p>L'espace urbain n'est pas composé d'ensemble de lieux dont la localisation est aléatoire, il dépend de choix d’acteurs pour répondre au besoin de la maîtrise de l'espace. La capacité à comprendre et à simuler l'évolution urbaine s'avère essentielle afin de contrôler l'évolution de la ville selon une perspective durable et/ou innovante. Les villes actuelles souffrent d'étalement urbain; ce qui conduit à une ville consommatrice, dispersée sur une grande surface de sol et générant beaucoup de déplacements. Le recours aux énergies renouvelable n'est pas une réponse suffisante aux dommages causés à l'environnement. L'aménagement du territoire doit être repensé. Les modes statiques de représentation (cartes, plan d’aménagement) et les stratégies de planification actuelles ne semblent plus adaptés à la dynamique évolutive de l'espace urbain. Nous proposons donc de tester un outil dynamique qui pourrait permettre de faciliter la compréhension et les prises de décisions liées au développement urbain.</p>
+
+<h1>
+<a name="objectifs-et-hypoth%C3%A8ses" class="anchor" href="#objectifs-et-hypoth%C3%A8ses"><span class="octicon octicon-link"></span></a>Objectifs et hypothèses</h1>
+
+<p>La forme de la ville est créée selon la disposition de trois types d'agents: des zones commerciales, des ménages de classe moyenne-pauvre, et des ménages riches. Le but est d'étudier la forme que la ville prend en fonction de l'intensité des différentes attractions, avec les hypothèses suivantes: Les commerces veulent être près des routes pour être accessibles et proches les uns des autres. Les ménages pauvres veulent être proches des zones commerces, car ils doivent éviter de dépenser de l'argent dans les transports. Ils préfèrent être en eux. Les ménages riches se fichent d'être loin du centre et des commerces, car ils ont les moyens de se déplacer beaucoup. Ils préfèrent être entre eux.</p>
+
+<h1>
+<a name="m%C3%A9thodes-et-proc%C3%A9dures" class="anchor" href="#m%C3%A9thodes-et-proc%C3%A9dures"><span class="octicon octicon-link"></span></a>Méthodes et procédures</h1>
+
+<p>L'utilisateur peut faire varier différents paramètres: Le niveau d'attraction entre ménages de même types Le niveau d'attraction des commerces entre eux Le niveau d'attraction entre ménages pauvres et les commerces Activer la fonction "level" qui autorise les commerces et les ménages pauvres à se superposer (imaginer des immeubles ou des centres commerciaux)</p>
+
+<p>choisir différentes conditions de superposition (seulement entre shop ou seulement entre ménages)?
+La densité est calculée en fonction du temps, mais une fois que la ville est stabilisé, on peut en plus afficher une carte de densité.
+<img src="https://raw.githubusercontent.com/EPFL-AgentBased-2014/Cours/master/Images/Wheeler-FoxHuntingRabbits.jpg" alt="Un exemple d'image"></p>
+
+<h1>
+<a name="r%C3%A9sultats" class="anchor" href="#r%C3%A9sultats"><span class="octicon octicon-link"></span></a>Résultats</h1>
+
+<p>Des villes de formes et densités très différentes se forment selon les paramètres choisis.</p>
+
+<p>Une ville privilégiant la mixité fonctionnelle aura tendance à effacer les frontières des quartiers riches/pauvres, mais elle atteindra une densité moindre. Une ville privilégiant la mixité sociale aura tendance à être moins dense qu'une ville où les quartiers de ménages pauvres et riches sont clairement séparés. Ainsi, en augmentant la répulsion entre pauvres et riches, la ville se densifie. Cependant, à partir d'un certain seuil critique, il se forme une ceinture de vide entre riche et pauvres, et la densité commence à décroître. La mesure la plus efficace pour densifier la ville est clairement celle qui autorise la superposition des commerces et des ménages pauvres. La frontière de la ville s'affirme et la densité atteint un niveau record.</p>
+
+<h1>
+<a name="discussion-et-conclusion" class="anchor" href="#discussion-et-conclusion"><span class="octicon octicon-link"></span></a>Discussion et conclusion</h1>
+
+<p>Ce modèle reste une simplification de la structure urbaine réelle, cependant, il serait possible d'ajouter de multiples paramètres à ce modèle minimal, tels que des mesures politiques: augmentation du coût des transports, promotion de la mixité sociale. On pourrait aussi ajouter d'autres agents tels les industries ou des zones rurales. Faire croître la population de notre modèle permettrait de voir si la ville ne prend pas une forme chaotique, et donc de tester la robustesse de nos paramètres.</p>
+
+<p>Nous avons testé la pertinence de notre modèle en le comparant avec des plans de ville réelles.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/EPFL-AgentBased-2014">EPFL-AgentBased-2014</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
