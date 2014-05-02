@@ -4,7 +4,6 @@ breed [shops shop]
 breed [houses2 house2]
 breed [centres centre]
 breed [centres2 centre2]
-breed [centres3 centre3]
 globals [density]
 
 
@@ -31,7 +30,6 @@ end
 to setup-center
   create-centres 1 [ ; 1 = nombre de centre crée
     setxy 0 0
-    ;move-to patch 0 0 
     set color gray
     set shape "circle 2"
     set size 7
@@ -61,17 +59,15 @@ to setup-zones
     set color violet
     set shape "house"
     ]
-  ask houses1 [demenage-init]
+  ask houses1 [demenage-init] ; prend une position aléatoire 
   ask houses2 [demenage-init]
   ask shops [demenage-init]
 end
 
 
 to settle
-  ;ask centres [move-to one-of patches with [count turtles-here = 0]]
-  ask builders [move-to one-of centres] ;one-of patches with [count builders-here < 5 and any? centres-here]]
+  ask builders [move-to one-of centres] 
 end
-
 
 
 
@@ -91,7 +87,7 @@ end
 to move
   ask shops [  
     
-    let autre-job count shops in-radius radius-between-two-shops
+    let autre-job count shops in-radius radius-between-two-shops ; paramètre défini dans l'interface par l'utilisateur
     let routesnbr count centres2 in-radius 2
     if autre-job < m [demenage-job]
     if routesnbr < 1[demenage-job]
@@ -115,9 +111,6 @@ to move
     if level [
       if count houses1-here = 1 [demenage-job]
       ]
-    
-    ;if count shops-here >= 1 [demenage-house]
-    ;if count houses2-here >= 1 [demenage-house]
     ]
   ask builders [
     let demande count shops in-radius 3
@@ -127,14 +120,8 @@ to move
     if demande > 3 [
       fd 3
       hatch-centres2 1]
-     
-;      set shape "circle"
-      
-      ;ifelse random 100 < 50 [lt 90][rt 90]
-      ;fd 3
     ]
 end
-
 
 
 
@@ -153,22 +140,12 @@ end
 
 to demenage-house
   move-to one-of patches with [count turtles-here = 0]
-  ;move-to one-of patches with [count houses2-here + count houses1-here + count shops-here = 0]
 end
 
 
 
 
 to demenage-job
- 
- ;if level = 0 [
- 
-  ; move-to one-of shops
-; ]
- ;if level != 0 [
-   
-; move-to one-of patches with [count shops-here = 1]
- ;]
   move-to one-of patches with [ count houses2-here + count centres-here = 0]
 end
 
@@ -177,18 +154,9 @@ end
 
 
 
-to calculate-density
-  
+to calculate-density 
   set density count patches with [count turtles-here + count turtles-on neighbors = 0] / 64
-  ;let total (nhouse1 + nhouse2 + nshop)
-  
-  ;let occupance count patches with [count turtles-here >= 1 ] ; et les patches avec un voision qui est un turtles
-  ;let density (occupance / total) * 100
-  ;print "nombre de cases vides:" 
-  ;print density
 end
-
-
 
 
 
@@ -196,9 +164,7 @@ end
 to-report average-density
   if not any? patches with [count turtles-here >= 1] [report 0]
   report count turtles / count patches with [count turtles-here >= 1]
-  ;print nhabm
 end
-
 
 
 
@@ -211,25 +177,11 @@ end
 
 
 to map-density
- 
- ask patches [ 
-   let nturtles count turtles-here ; with [color]
-   
-  ; let npop nturtles - count centre2-here
+  ask patches [ 
+   let nturtles count turtles-here 
    set pcolor 10 - (nturtles + 3) / 2 + 1.4
     ]
- 
- ;set n (count-turtles-at 1 1)
- ; if n
-  
 end
-
-
-
-
-; shops: radius 1 - m=4 => plusieurs micro-centres
-; houses1:             houses2           shops
-
 
 
 
@@ -354,7 +306,7 @@ Similar-wanted1
 Similar-wanted1
 0
 8
-3
+2
 1
 1
 NIL
@@ -369,7 +321,7 @@ Similar-wanted2
 Similar-wanted2
 0
 8
-8
+5
 1
 1
 NIL
@@ -384,7 +336,7 @@ nb-of-jobs-wanted
 nb-of-jobs-wanted
 0
 10
-6
+4
 1
 1
 NIL
@@ -429,7 +381,7 @@ Radius-between-two-shops
 Radius-between-two-shops
 0
 20
-13
+5
 1
 1
 NIL
@@ -441,7 +393,7 @@ INPUTBOX
 285
 325
 m
-14
+5
 1
 0
 Number
@@ -542,7 +494,7 @@ SWITCH
 381
 level
 level
-0
+1
 1
 -1000
 
