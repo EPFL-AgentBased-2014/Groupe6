@@ -42,22 +42,30 @@
 <h1>
 <a name="objectifs-et-hypoth%C3%A8ses" class="anchor" href="#objectifs-et-hypoth%C3%A8ses"><span class="octicon octicon-link"></span></a>Objectifs et hypothèses</h1>
 
-<p>La forme de la ville est créée selon la disposition de trois types d'agents: des zones commerciales, des ménages de classe moyenne-pauvre, et des ménages riches. Le but est d'étudier la forme que la ville prend en fonction de l'intensité des différentes attractions, avec les hypothèses suivantes: Les commerces veulent être près des routes pour être accessibles et proches les uns des autres. Les ménages pauvres veulent être proches des zones commerces, car ils doivent éviter de dépenser de l'argent dans les transports. Ils préfèrent être en eux. Les ménages riches se fichent d'être loin du centre et des commerces, car ils ont les moyens de se déplacer beaucoup. Ils préfèrent être entre eux.</p>
+<p>La forme de la ville est créée selon la disposition de trois types d'agents: des zones commerciales, des ménages de classe moyenne-pauvre, et des ménages riches. Le but est d'étudier la forme que la ville prend en fonction de l'intensité des différentes attractions.
+Nous nous sommes basés sur les hypothèses suivantes: 
+-Les commerces (en jaune) veulent être près des routes pour être accessibles et proches les uns des autres. 
+-Les ménages pauvres (en rouge) veulent être proches des zones commerciales, car ils doivent éviter de dépenser de l'argent dans les transports.
+-Les ménages riches (en violet) se fichent d'être loin du centre et des commerces, car ils ont les moyens et le temps de se déplacer beaucoup. Ils préfèrent être entre ménages riches.</p>
 
 <h1>
 <a name="m%C3%A9thodes-et-proc%C3%A9dures" class="anchor" href="#m%C3%A9thodes-et-proc%C3%A9dures"><span class="octicon octicon-link"></span></a>Méthodes et procédures</h1>
 
-<p>L'utilisateur peut faire varier différents paramètres: Le niveau d'attraction entre ménages de même types Le niveau d'attraction des commerces entre eux Le niveau d'attraction entre ménages pauvres et les commerces Activer la fonction "level" qui autorise les commerces et les ménages pauvres à se superposer (imaginer des immeubles ou des centres commerciaux)</p>
+<p>L'utilisateur peut faire varier différents paramètres: Le niveau d'attraction entre ménages de même types Le niveau d'attraction des commerces entre eux Le niveau d'attraction entre ménages pauvres et les commerces.
+Il peut aussi activer la fonction "level" qui autorise les commerces et les ménages pauvres à se superposer (imaginer des immeubles ou des centres commerciaux).</p>
 
-<p>choisir différentes conditions de superposition (seulement entre shop ou seulement entre ménages)?
-La densité est calculée en fonction du temps, mais une fois que la ville est stabilisé, on peut en plus afficher une carte de densité.</p>
+<p>(choisir différentes conditions de superposition (seulement entre shop ou seulement entre ménages)?)</p>
+
+<p>La densité moyenne est calculée en fonction du temps. L'intérêt est qu'on peut modifier ces paramètres au cours de la modélisation et ainsi voir directement leur effet sur la densité. </p>
+
+<p>En option, une fois que la ville est stabilisé, on peut demander aux patchs de se colorer en fonction du nombre d'agents qu'ils ont sur eux pour obtenir une carte de densité. L'intérêt de cette option est particulièrement important lorsqu'on autorise la superposition des agents, car lorsque plusieurs agents sont superposés les uns sur les autres, on ne le voit pas directement. </p>
 
 <h1>
 <a name="r%C3%A9sultats" class="anchor" href="#r%C3%A9sultats"><span class="octicon octicon-link"></span></a>Résultats</h1>
 
 <p>Des villes de formes et densités très différentes se forment selon les paramètres choisis.</p>
 
-<p>Une ville privilégiant la mixité fonctionnelle aura tendance à effacer les frontières des quartiers riches/pauvres, mais elle atteindra une densité moindre. </p>
+<p>Une ville privilégiant la mixité fonctionnelle aura tendance à effacer les frontières des quartiers résidentiels/commerciaux. Les commerces ne s'agglomèrent pas au centre de la ville mais s'étalent le long des routes. Ainsi, les ménages "pauvres" peuvent facilement trouver une place à proximité des commerces.  </p>
 
 <p><img src="https://github.com/EPFL-AgentBased-2014/Groupe6/blob/master/Diagrammes/Diagramme%20mixite%CC%81%20fonctionnelle.png?raw=true" alt="Un exemple d'image"></p>
 
@@ -65,7 +73,9 @@ La densité est calculée en fonction du temps, mais une fois que la ville est s
 
 <p><img src="https://github.com/EPFL-AgentBased-2014/Groupe6/blob/master/Diagrammes/Diagramme%20mixite%CC%81%20sociale.png?raw=true" alt="Un exemple d'image"></p>
 
-<p>Cependant, à partir d'un certain seuil critique, il se forme une ceinture de vide entre riche et pauvres, et la densité commence à décroître. La mesure la plus efficace pour densifier la ville est clairement celle qui autorise la superposition des commerces et des ménages pauvres. La frontière de la ville s'affirme et la densité atteint un niveau record.</p>
+<p>Cependant, à partir d'un certain seuil critique, quand le nombre de voisins riches exigés par un riche dépasse le nombre de 7, il se forme une ceinture de vide entre riche et pauvres, et la densité commence à décroître.</p>
+
+<p>La mesure la plus efficace pour densifier la ville est clairement celle qui autorise la superposition des commerces et des ménages pauvres. La frontière de la ville s'affirme et la densité atteint un niveau record.</p>
 
 <p>Avant l'activation du paramètre qui autorise la superposition des agents:
 <img src="https://github.com/EPFL-AgentBased-2014/Groupe6/blob/master/images/ENAC_3D_1.jpg?raw=true" alt="étalement horizontal"></p>
@@ -76,7 +86,11 @@ La densité est calculée en fonction du temps, mais une fois que la ville est s
 <h1>
 <a name="discussion-et-conclusion" class="anchor" href="#discussion-et-conclusion"><span class="octicon octicon-link"></span></a>Discussion et conclusion</h1>
 
-<p>Ce modèle reste une simplification de la structure urbaine réelle, cependant, il serait possible d'ajouter de multiples paramètres à ce modèle minimal, tels que des mesures politiques: augmentation du coût des transports, promotion de la mixité sociale. On pourrait aussi ajouter d'autres agents tels les industries ou des zones rurales. Faire croître la population de notre modèle permettrait de voir si la ville ne prend pas une forme chaotique, et donc de tester la robustesse de nos paramètres.</p>
+<p>Les résultats de nos modélisations sont que la ville se densifie en promouvant la mixité fonctionnelle et la croissance verticale. La mixité sociale n'est pas favorable à la densification.
+Ces conclusions semblent cohérentes, mais elles restent discutables. Premièrement, les résultats des valeurs de densité ne sont pas à prendre au premier degré: Pour certaines configurations de ville, on obtient des densité extrêmement faibles. Cela ne veut pas dire que une telle ville ne peut pas être dense en réalité. Au contraire de la réalité, notre modèle ne se stabilise pas tant que tous les agents ne sont pas satisfaits. Ainsi, si une configuration n'arrive pas à satisfaire les agents, ceux ci seront en constant déplacement, ce qui conduira à un calcul de la densité faussé (très bas). Le calcul de notre densité inclue donc indirectement la satisfaction des agents. </p>
+
+<p>Ensuite, notre modèle reste une simplification de la structure urbaine réelle. Il serait possible d'ajouter de multiples paramètres à ce modèle minimal, tels que d'autres types d'agents ou des mesures politiques: augmentation du coût des transports, promotion de la mixité sociale, créations de "zones" plus ou moins favorables à différents types d'agents (à l'image des plans d'aménagement réels), ajouts d'agents "industrie". 
+Faire croître la population de notre modèle permettrait de voir si la ville ne prend pas une forme chaotique, et donc de tester la robustesse de nos paramètres.</p>
 
 <p>Nous avons testé la pertinence de notre modèle en le comparant avec des plans de ville réelles.</p>
       </section>
