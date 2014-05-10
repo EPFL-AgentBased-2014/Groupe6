@@ -186,7 +186,6 @@ to map-density
 end
 
 
-
 @#$#@#$#@
 GRAPHICS-WINDOW
 298
@@ -202,8 +201,8 @@ GRAPHICS-WINDOW
 1
 1
 0
-1
-1
+0
+0
 1
 -40
 40
@@ -272,7 +271,7 @@ INPUTBOX
 64
 131
 nhouse1
-2000
+1800
 1
 0
 Number
@@ -283,7 +282,7 @@ INPUTBOX
 175
 131
 nshop
-700
+600
 1
 0
 Number
@@ -294,7 +293,7 @@ INPUTBOX
 123
 131
 nhouse2
-400
+300
 1
 0
 Number

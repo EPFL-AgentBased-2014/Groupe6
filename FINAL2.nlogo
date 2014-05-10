@@ -234,7 +234,6 @@ end
 
 
 
-
 @#$#@#$#@
 GRAPHICS-WINDOW
 298
@@ -250,8 +249,8 @@ GRAPHICS-WINDOW
 1
 1
 0
-1
-1
+0
+0
 1
 -40
 40
@@ -320,7 +319,7 @@ INPUTBOX
 64
 131
 nhouse1
-2500
+1200
 1
 0
 Number
@@ -331,7 +330,7 @@ INPUTBOX
 175
 131
 nshop
-900
+400
 1
 0
 Number
@@ -342,7 +341,7 @@ INPUTBOX
 123
 131
 nhouse2
-400
+300
 1
 0
 Number
@@ -356,7 +355,7 @@ Similar-wanted1
 Similar-wanted1
 0
 8
-5
+1
 1
 1
 NIL
@@ -371,7 +370,7 @@ Similar-wanted2
 Similar-wanted2
 0
 8
-6
+2
 1
 1
 NIL
@@ -386,7 +385,7 @@ nb-of-jobs-wanted
 nb-of-jobs-wanted
 0
 10
-2
+9
 1
 1
 NIL
@@ -431,7 +430,7 @@ Radius-between-two-shops
 Radius-between-two-shops
 0
 20
-5
+20
 1
 1
 NIL
@@ -443,7 +442,7 @@ INPUTBOX
 285
 325
 m
-14
+1
 1
 0
 Number
@@ -544,7 +543,7 @@ SWITCH
 381
 level
 level
-0
+1
 1
 -1000
 
