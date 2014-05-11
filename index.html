@@ -42,13 +42,13 @@
 <h1>
 <a name="hypoth%C3%A8ses" class="anchor" href="#hypoth%C3%A8ses"><span class="octicon octicon-link"></span></a>Hypothèses</h1>
 
-<h2>
-<a name="g%C3%A9n%C3%A9rales" class="anchor" href="#g%C3%A9n%C3%A9rales"><span class="octicon octicon-link"></span></a>générales:</h2>
+<h3>
+<a name="g%C3%A9n%C3%A9rales" class="anchor" href="#g%C3%A9n%C3%A9rales"><span class="octicon octicon-link"></span></a>générales:</h3>
 
 <p>La forme que prend une ville est un phénomène émergent. </p>
 
-<h2>
-<a name="particuli%C3%A8res" class="anchor" href="#particuli%C3%A8res"><span class="octicon octicon-link"></span></a>particulières:</h2>
+<h3>
+<a name="particuli%C3%A8res" class="anchor" href="#particuli%C3%A8res"><span class="octicon octicon-link"></span></a>particulières:</h3>
 
 <p>Cette forme dépend de la position de trois types d'agents: des commerces, des ménages modestes, des ménages aisés. 
 -Les commerces (en jaune) veulent être près des routes pour être accessibles et proches les uns des autres. 
@@ -58,8 +58,8 @@
 <h1>
 <a name="m%C3%A9thodes-et-proc%C3%A9dures" class="anchor" href="#m%C3%A9thodes-et-proc%C3%A9dures"><span class="octicon octicon-link"></span></a>Méthodes et procédures</h1>
 
-<h2>
-<a name="el%C3%A9ments" class="anchor" href="#el%C3%A9ments"><span class="octicon octicon-link"></span></a>Eléments</h2>
+<h3>
+<a name="el%C3%A9ments" class="anchor" href="#el%C3%A9ments"><span class="octicon octicon-link"></span></a>Eléments</h3>
 
 <p>Fixe: 
 le centre ville, les routes
@@ -72,15 +72,27 @@ Les ménages modestes déménagent s'il n'y a pas assez de commerces proches d'e
 Les ménages riches déménagent s'il n'y a pas assez de voisins similaires. 
 Les ménages modestes et les commerces peuvent se superposer (à l'image d'immeubles ou de centres commerciaux) si le bouton "level" est activé.</p>
 
-<p>Processus</p>
+<h3>
+<a name="processus" class="anchor" href="#processus"><span class="octicon octicon-link"></span></a>Processus</h3>
+
+<p>Diagrammes de flux</p>
 
 <p>En option, une fois que la ville est stabilisé, on peut demander aux patchs de se colorer en fonction du nombre d'agents qu'ils ont sur eux pour obtenir une carte de densité. L'intérêt de cette option est particulièrement important lorsqu'on autorise la superposition des agents, car lorsque plusieurs agents sont superposés les uns sur les autres, on ne le voit pas directement. </p>
 
 <h1>
 <a name="r%C3%A9sultats" class="anchor" href="#r%C3%A9sultats"><span class="octicon octicon-link"></span></a>Résultats</h1>
 
-<p>Des villes de formes et densités très différentes se forment selon les paramètres choisis.
-La densité moyenne est calculée en fonction du temps. L'intérêt est qu'on peut modifier ces paramètres au cours de la modélisation et ainsi voir directement leur effet sur la densité. </p>
+<h3>
+<a name="observations-globales-de-comportement" class="anchor" href="#observations-globales-de-comportement"><span class="octicon octicon-link"></span></a>Observations globales de comportement</h3>
+
+<p>Des villes de formes et densités très différentes se forment selon les paramètres choisis.</p>
+
+<p>Images de villes</p>
+
+<p>La densité moyenne est calculée en fonction du temps. L'intérêt est qu'on peut modifier ces paramètres au cours de la modélisation et ainsi voir directement leur effet sur la densité. </p>
+
+<h3>
+<a name="analyse" class="anchor" href="#analyse"><span class="octicon octicon-link"></span></a>Analyse</h3>
 
 <p>Une ville privilégiant la mixité fonctionnelle aura tendance à effacer les frontières des quartiers résidentiels/commerciaux. Les commerces ne s'agglomèrent pas au centre de la ville mais s'étalent le long des routes. Ainsi, les ménages "pauvres" peuvent facilement trouver une place à proximité des commerces.  </p>
 
@@ -105,13 +117,8 @@ La densité moyenne est calculée en fonction du temps. L'intérêt est qu'on pe
 
 <p>Les résultats de nos modélisations sont que la ville se densifie en promouvant la mixité fonctionnelle et la croissance verticale. La mixité sociale n'est pas favorable à la densification.</p>
 
-<p>Ces conclusions semblent cohérentes, mais elles restent discutables. Premièrement, les résultats des valeurs de densité ne sont pas à prendre au premier degré: Pour certaines configurations de ville, on obtient des densité extrêmement faibles. Cela ne veut pas dire que une telle ville ne peut pas être dense en réalité. Au contraire de la réalité, notre modèle ne se stabilise pas tant que tous les agents ne sont pas satisfaits. Ainsi, si une configuration n'arrive pas à satisfaire les agents, ceux ci seront en constant déplacement, ce qui conduira à un calcul de la densité faussé (très bas). Le calcul de notre densité inclue donc indirectement la satisfaction des agents. </p>
-
-<p>Ensuite, notre modèle reste une simplification de la structure urbaine réelle. Il serait possible d'ajouter de multiples paramètres à ce modèle minimal, tels que d'autres types d'agents ou des mesures politiques: augmentation du coût des transports, promotion de la mixité sociale, créations de "zones" plus ou moins favorables à différents types d'agents (à l'image des plans d'aménagement réels), ajouts d'agents "industrie".</p>
-
-<p>Faire croître la population de notre modèle permettrait de voir si la ville ne prend pas une forme chaotique, et donc de tester la robustesse de nos paramètres.</p>
-
-<p>Nous avons testé la pertinence de notre modèle en le comparant avec des plans de ville réelles.</p>
+<p>Ces conclusions semblent cohérentes, mais elles restent discutables, car notre modèle reste une simplification de la structure urbaine réelle. Pour le rendre plus réaliste, on pourrait ajouter de multiples paramètres, tels que d'autres types d'agents ou des mesures politiques: augmentation du coût des transports, promotion de la mixité sociale, créations de "zones" plus ou moins favorables à différents types d'agents (à l'image des plans d'aménagement réels), ajouts d'agents "industrie", "écoles", "bureaux"... Nous pourrions aussi autoriser différents types de superposition: par exemple autoriser seulement les ménages modestes à se superposer, et ce dans une limite de par exemple 3 "étages"; de même avec les commerces.
+Une autre idée intéressante serait de faire croître la population de notre modèle pour voir si la ville ne prend pas une forme chaotique, et donc de tester la robustesse de nos paramètres.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/EPFL-AgentBased-2014">EPFL-AgentBased-2014</a></p>
