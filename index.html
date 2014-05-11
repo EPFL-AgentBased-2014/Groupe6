@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Groupe6 by EPFL-AgentBased-2014</title>
+    <title>Morphogenèse urbaine by EPFL-AgentBased-2014</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -15,7 +15,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Groupe6</h1>
+        <h1>Morphogenèse urbaine</h1>
         <p></p>
 
         <p class="view"><a href="https://github.com/EPFL-AgentBased-2014/Groupe6">View the Project on GitHub <small>EPFL-AgentBased-2014/Groupe6</small></a></p>
@@ -37,36 +37,50 @@
 <h1>
 <a name="introduction--int%C3%A9r%C3%AAt-de-la-recherche" class="anchor" href="#introduction--int%C3%A9r%C3%AAt-de-la-recherche"><span class="octicon octicon-link"></span></a>Introduction / Intérêt de la recherche</h1>
 
-<p>L'espace urbain n'est pas composé d'ensemble de lieux dont la localisation est aléatoire, il dépend de choix d’acteurs pour répondre au besoin de la maîtrise de l'espace. La capacité à comprendre et à simuler l'évolution urbaine s'avère essentielle afin de contrôler l'évolution de la ville selon une perspective durable et/ou innovante. Les villes actuelles souffrent d'étalement urbain; ce qui conduit à une ville consommatrice, dispersée sur une grande surface de sol et générant beaucoup de déplacements. Le recours aux énergies renouvelable n'est pas une réponse suffisante aux dommages causés à l'environnement. L'aménagement du territoire doit être repensé. Les modes statiques de représentation (cartes, plan d’aménagement) et les stratégies de planification actuelles ne semblent plus adaptés à la dynamique évolutive de l'espace urbain. Nous proposons donc de tester un outil dynamique qui pourrait permettre de faciliter la compréhension et les prises de décisions liées au développement urbain.</p>
+<p>Les villes actuelles souffrent d'étalement urbain, génère beaucoup de déplacements, et est par conséquent consommatrice et polluée. Le recours aux énergies renouvelable n'est pas une réponse suffisante aux dommages causés à l'environnement. C'est l'aménagement du territoire doit être repensé, car la capacité à comprendre et à simuler l'évolution urbaine est essentielle afin de contrôler l'évolution de la ville selon une perspective durable et/ou innovante. Nous pensons que les modes statiques de représentation (cartes, plan d’aménagement) ne sont plus adaptés à la dynamique évolutive de l'espace urbain. Nous proposons donc de tester un outil dynamique, basé sur des processus bottom-up, qui pourrait permettre de faciliter la compréhension et les prises de décisions liées au développement urbain.</p>
 
 <h1>
-<a name="objectifs-et-hypoth%C3%A8ses" class="anchor" href="#objectifs-et-hypoth%C3%A8ses"><span class="octicon octicon-link"></span></a>Objectifs et hypothèses</h1>
+<a name="hypoth%C3%A8ses" class="anchor" href="#hypoth%C3%A8ses"><span class="octicon octicon-link"></span></a>Hypothèses</h1>
 
-<p>La forme de la ville est créée selon la disposition de trois types d'agents: des zones commerciales, des ménages de classe moyenne-pauvre, et des ménages riches. Le but est d'étudier la forme que la ville prend en fonction de l'intensité des différentes attractions.
-Nous nous sommes basés sur les hypothèses suivantes: </p>
+<h2>
+<a name="g%C3%A9n%C3%A9rales" class="anchor" href="#g%C3%A9n%C3%A9rales"><span class="octicon octicon-link"></span></a>générales:</h2>
 
-<p>-Les commerces (en jaune) veulent être près des routes pour être accessibles et proches les uns des autres. </p>
+<p>La forme que prend une ville est un phénomène émergent. </p>
 
-<p>-Les ménages pauvres (en rouge) veulent être proches des zones commerciales, car ils doivent éviter de dépenser de l'argent dans les transports.</p>
+<h2>
+<a name="particuli%C3%A8res" class="anchor" href="#particuli%C3%A8res"><span class="octicon octicon-link"></span></a>particulières:</h2>
 
-<p>-Les ménages riches (en violet) se fichent d'être loin du centre et des commerces, car ils ont les moyens et le temps de se déplacer beaucoup. Ils préfèrent être entre ménages riches.</p>
+<p>Cette forme dépend de la position de trois types d'agents: des commerces, des ménages modestes, des ménages aisés. 
+-Les commerces (en jaune) veulent être près des routes pour être accessibles et proches les uns des autres. 
+-Les ménages pauvres (en rouge) veulent être proches des zones commerciales, car ils doivent éviter de dépenser de l'argent dans les transports.
+-Les ménages riches (en violet) se fichent d'être loin du centre et des commerces, car ils ont les moyens et le temps de se déplacer beaucoup. Ils préfèrent être entre ménages riches.</p>
 
 <h1>
 <a name="m%C3%A9thodes-et-proc%C3%A9dures" class="anchor" href="#m%C3%A9thodes-et-proc%C3%A9dures"><span class="octicon octicon-link"></span></a>Méthodes et procédures</h1>
 
-<p>L'utilisateur peut faire varier différents paramètres: Le niveau d'attraction entre ménages de même types Le niveau d'attraction des commerces entre eux Le niveau d'attraction entre ménages pauvres et les commerces.
-Il peut aussi activer la fonction "level" qui autorise les commerces et les ménages pauvres à se superposer (imaginer des immeubles ou des centres commerciaux).</p>
+<h2>
+<a name="el%C3%A9ments" class="anchor" href="#el%C3%A9ments"><span class="octicon octicon-link"></span></a>Eléments</h2>
 
-<p>(choisir différentes conditions de superposition (seulement entre shop ou seulement entre ménages)?)</p>
+<p>Fixe: 
+le centre ville, les routes
+Mobiles: 
+les commerces, les ménages "pauvres", les ménages "riches"
+Relations: 
+Les routes grandissent à partir du centre tant qu'il y a assez de commerces proches d'elles.
+Les commerces déménagent tant qu'ils ne sont pas assez proche d'une route ou s'ils sont trop isolés des autres commerces.
+Les ménages modestes déménagent s'il n'y a pas assez de commerces proches d'eux et s'il n'y a pas assez de voisins similaires.
+Les ménages riches déménagent s'il n'y a pas assez de voisins similaires. 
+Les ménages modestes et les commerces peuvent se superposer (à l'image d'immeubles ou de centres commerciaux) si le bouton "level" est activé.</p>
 
-<p>La densité moyenne est calculée en fonction du temps. L'intérêt est qu'on peut modifier ces paramètres au cours de la modélisation et ainsi voir directement leur effet sur la densité. </p>
+<p>Processus</p>
 
 <p>En option, une fois que la ville est stabilisé, on peut demander aux patchs de se colorer en fonction du nombre d'agents qu'ils ont sur eux pour obtenir une carte de densité. L'intérêt de cette option est particulièrement important lorsqu'on autorise la superposition des agents, car lorsque plusieurs agents sont superposés les uns sur les autres, on ne le voit pas directement. </p>
 
 <h1>
 <a name="r%C3%A9sultats" class="anchor" href="#r%C3%A9sultats"><span class="octicon octicon-link"></span></a>Résultats</h1>
 
-<p>Des villes de formes et densités très différentes se forment selon les paramètres choisis.</p>
+<p>Des villes de formes et densités très différentes se forment selon les paramètres choisis.
+La densité moyenne est calculée en fonction du temps. L'intérêt est qu'on peut modifier ces paramètres au cours de la modélisation et ainsi voir directement leur effet sur la densité. </p>
 
 <p>Une ville privilégiant la mixité fonctionnelle aura tendance à effacer les frontières des quartiers résidentiels/commerciaux. Les commerces ne s'agglomèrent pas au centre de la ville mais s'étalent le long des routes. Ainsi, les ménages "pauvres" peuvent facilement trouver une place à proximité des commerces.  </p>
 
